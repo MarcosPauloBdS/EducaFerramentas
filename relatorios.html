@@ -1,0 +1,115 @@
+<!-- relatorios.html atualizado: cores aplicadas apenas na média do bimestre -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerar Relatórios - EducaFerramentas</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+    body { background: #f8f9fa; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+    header { background: #2c7a7b; color: #fff; padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 10; }
+    header h1 { font-size: 1.5rem; }
+    main { flex: 1; padding: 2rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+    .section { background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 2rem; width: 100%; max-width: 700px; }
+    .section h2 { color: #2c7a7b; margin-bottom: 1rem; }
+    .input-field { width:100%; padding:0.5rem; border-radius:8px; border:1px solid #ccc; margin-bottom:0.5rem; }
+    .btn { background: #2c7a7b; color: #fff; padding: 0.8rem 1.5rem; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; text-decoration: none; display: inline-block; transition: background 0.2s; margin-top:0.5rem; }
+    .btn:hover { background: #285e61; }
+    footer { background: #2c7a7b; color: #fff; text-align: center; padding: 1rem; margin-top: auto; }
+    table { width:100%; border-collapse: collapse; margin-top:1rem; }
+    th, td { border:1px solid #ccc; padding:0.5rem; text-align:left; }
+    th { background: #2c7a7b; color:#fff; }
+    .nota-container { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.5rem; }
+    .nota-item { flex:1; display:flex; flex-direction:column; }
+    .media-alta { color: blue; font-weight: bold; }
+    .media-baixa { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>EducaFerramentas - Gerar Relatórios</h1>
+  </header>
+
+  <main>
+    <div class="section">
+      <h2>Cadastro de Alunos e Notas</h2>
+      <input type="text" id="nomeAluno" class="input-field" placeholder="Nome do Aluno">
+      <div class="nota-container">
+        <div class="nota-item"><input type="number" class="input-field nota" placeholder="Nota 1"><input type="number" class="input-field peso" placeholder="Peso %"></div>
+        <div class="nota-item"><input type="number" class="input-field nota" placeholder="Nota 2"><input type="number" class="input-field peso" placeholder="Peso %"></div>
+        <div class="nota-item"><input type="number" class="input-field nota" placeholder="Nota 3"><input type="number" class="input-field peso" placeholder="Peso %"></div>
+        <div class="nota-item"><input type="number" class="input-field nota" placeholder="Nota 4"><input type="number" class="input-field peso" placeholder="Peso %"></div>
+        <div class="nota-item"><input type="number" class="input-field nota" placeholder="Nota 5"><input type="number" class="input-field peso" placeholder="Peso %"></div>
+        <div class="nota-item"><input type="number" class="input-field nota" placeholder="Nota 6"><input type="number" class="input-field peso" placeholder="Peso %"></div>
+      </div>
+      <button class="btn" onclick="adicionarAluno()">Adicionar Aluno</button>
+      <button class="btn" onclick="limparAlunos()" style="background:#c53030; margin-left:0;">Limpar Todos</button>
+      <table id="tabelaAlunos">
+        <thead>
+          <tr><th>Aluno</th><th>Notas</th><th>Média do Bimestre</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 EducaFerramentas | Marcos Paulo B. da Silva</p>
+  </footer>
+
+  <script>
+    function adicionarAluno() {
+      const nome = document.getElementById('nomeAluno').value.trim();
+      const notaInputs = document.querySelectorAll('.nota');
+      const pesoInputs = document.querySelectorAll('.peso');
+      if(!nome) { alert('Digite o nome do aluno!'); return; }
+
+      const notas = [];
+      const pesos = [];
+
+      for(let i=0;i<notaInputs.length;i++){
+        if(notaInputs[i].value !== '') {
+          notas.push(parseFloat(notaInputs[i].value));
+          let peso = parseFloat(pesoInputs[i].value);
+          pesos.push(isNaN(peso)?1:peso); // se peso vazio, considera 1
+        }
+      }
+
+      if(notas.length === 0) { alert('Insira pelo menos uma nota!'); return; }
+
+      // Calcular média ponderada
+      let somaPesos = 0;
+      let somaNotas = 0;
+      for(let i=0;i<notas.length;i++){
+        somaNotas += notas[i]*pesos[i];
+        somaPesos += pesos[i];
+      }
+      const mediaValor = somaNotas/somaPesos;
+      let media = mediaValor.toFixed(2);
+
+      // Aplicar cor apenas na média
+      if(mediaValor >= 8) media = `<span class='media-alta'>${media}</span>`;
+      else if(mediaValor <= 5.9) media = `<span class='media-baixa'>${media}</span>`;
+
+      // Adicionar na tabela
+      const tbody = document.getElementById('tabelaAlunos').querySelector('tbody');
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${nome}</td><td>${notas.join(', ')}</td><td>${media}</td>`;
+      tbody.appendChild(tr);
+
+      // Limpar campos
+      document.getElementById('nomeAluno').value = '';
+      notaInputs.forEach(input => input.value = '');
+      pesoInputs.forEach(input => input.value = '');
+    }
+
+    function limparAlunos(){
+      const tbody = document.getElementById('tabelaAlunos').querySelector('tbody');
+      tbody.innerHTML='';
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EducaFerramentas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f8f9fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #2c7a7b;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    .banner {
+      background: linear-gradient(to right, #38b2ac, #319795);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .banner h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .banner p {
+      font-size: 1rem;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #2c7a7b;
+    }
+
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      background: #2c7a7b;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #285e61;
+    }
+
+    footer {
+      background: #2c7a7b;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto;
+    }
+
+    @media(min-width: 700px) {
+      .card-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>EducaFerramentas</h1>
+  </header>
+
+  <section class="banner">
+    <h2>Bem-vindo ao Sistema Educacional Inteligente</h2>
+    <p>Simplifique sua rotina: gere provas com IA ou relatórios automáticos.</p>
+  </section>
+
+  <main>
+    <div class="card-container">
+      <div class="card">
+        <h3>📝 Gerar Provas</h3>
+        <p>Monte avaliações com apoio de IA, imprima em PDF e embaralhe as alternativas.</p>
+        <a href="provas.html" class="btn">Acessar</a>
+      </div>
+      <div class="card">
+        <h3>📊 Gerar Relatórios</h3>
+        <p>Cadastre alunos, insira notas e obtenha relatórios de desempenho da turma.</p>
+        <a href="relatorios.html" class="btn">Acessar</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 EducaFerramentas | Marcos Paulo B. da Silva</p>
+  </footer>
+
+</body>
+</html>
