@@ -41,7 +41,7 @@ async function gerarQuestao() {
   const resposta = await fetch("https://educaferramentas.onrender.com/gerar", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ tema })
+    body: JSON.stringify({ tema: document.getElementById("tema").value })
   });
 
   const dados = await resposta.json();
@@ -73,6 +73,7 @@ function adicionarQuestaoNaTela(questao) {
 
 </body>
 </html>
+
 
 
 
