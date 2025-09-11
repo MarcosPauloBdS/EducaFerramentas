@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EducaFerramentas - Provas</title>
-<style>
-  body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f9; }
-  header { background:#4CAF50; color:white; padding:1rem; text-align:center; }
-  main { padding:1rem; max-width:800px; margin:auto; }
-  input, button { padding:0.5rem; font-size:1rem; margin:0.3rem 0; width:100%; }
-  #questoes { margin-top:1rem; }
-  .questao { background:white; padding:1rem; margin-bottom:1rem; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1);}
-  .alternativas li { margin:0.2rem 0; }
-  footer { text-align:center; padding:1rem; margin-top:2rem; background:#ddd; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EducaFerramentas - Gerador de Provas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      padding: 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    input, button {
+      padding: 0.5rem;
+      margin: 0.2rem 0;
+      font-size: 1rem;
+    }
+    button {
+      cursor: pointer;
+    }
+    #questoes {
+      margin-top: 1rem;
+    }
+    .questao {
+      background: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      background: #eee;
+    }
+  </style>
 </head>
 <body>
 
@@ -23,8 +56,10 @@
 
 <main>
   <label for="tema">Digite o tema da questão:</label>
-  <input type="text" id="tema" placeholder="Ex: Fotossíntese">
+  <input type="text" id="tema" placeholder="Ex: Fotossíntese, História do Brasil">
   <button onclick="gerarQuestao()">Gerar Questão</button>
+  <button onclick="limparQuestoes()">Limpar Todas</button>
+  <button onclick="imprimirProva()">Imprimir Prova</button>
 
   <div id="questoes"></div>
 </main>
@@ -38,37 +73,63 @@ async function gerarQuestao() {
   const tema = document.getElementById("tema").value.trim();
   if (!tema) { alert("Digite um tema"); return; }
 
-  const resposta = await fetch("https://educaferramentas.onrender.com/gerar", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ tema: document.getElementById("tema").value })
-  });
+  try {
+    const resposta = await fetch("https://educaferramentas.onrender.com/gerar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ tema })
+    });
 
+    if (!resposta.ok) throw new Error(`HTTP error! status: ${resposta.status}`);
+    const dados = await resposta.json();
 
-  const dados = await resposta.json();
+    if (dados.enunciado) {
+      adicionarQuestaoNaTela(dados);
+    } else {
+      alert("Erro ao gerar questão: " + (dados.erro || JSON.stringify(dados)));
+    }
 
-  if (dados.enunciado) {
-    adicionarQuestaoNaTela(dados);
-  } else {
-    alert("Erro ao gerar questão: " + (dados.erro || JSON.stringify(dados)));
+  } catch (err) {
+    alert("Erro ao gerar questão: " + err.message);
   }
 }
 
 function adicionarQuestaoNaTela(questao) {
-  const container = document.getElementById("questoes");
-
   const div = document.createElement("div");
-  div.classList.add("questao");
+  div.className = "questao";
+
+  // embaralhar alternativas
+  const alternativas = [...questao.alternativas];
+  for (let i = alternativas.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [alternativas[i], alternativas[j]] = [alternativas[j], alternativas[i]];
+  }
 
   div.innerHTML = `
-    <p><strong>Enunciado:</strong> ${questao.enunciado}</p>
-    <ul class="alternativas">
-      ${questao.alternativas.map(alt => `<li>${alt}</li>`).join("")}
+    <p><strong>${questao.enunciado}</strong></p>
+    <ul>
+      ${alternativas.map(a => `<li>${a}</li>`).join("")}
     </ul>
-    <p><em>Resposta correta: ${questao.correta}</em></p>
+    <p><em>Gabarito: ${questao.correta}</em></p>
   `;
+  document.getElementById("questoes").appendChild(div);
+}
 
-  container.appendChild(div);
+function limparQuestoes() {
+  document.getElementById("questoes").innerHTML = "";
+}
+
+function imprimirProva() {
+  const conteudo = document.getElementById("questoes").innerHTML;
+  const janela = window.open("", "_blank");
+  janela.document.write(`
+    <html>
+      <head><title>Prova</title></head>
+      <body>${conteudo}</body>
+    </html>
+  `);
+  janela.document.close();
+  janela.print();
 }
 </script>
 
