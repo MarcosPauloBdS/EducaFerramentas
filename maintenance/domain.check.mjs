@@ -1,0 +1,5 @@
+import {arrangeBooklet} from '../assets/booklets.mjs';
+import test from 'node:test';import assert from 'node:assert/strict';import {weightedMean} from '../assets/domain.mjs';
+test('média ponderada e preservação de zero',()=>{assert.equal(weightedMean([{grade:10,weight:3},{grade:0,weight:1}]),7.5);});
+test('rejeita pesos nulos em conjunto, negativos e notas fora da escala',()=>{for(const entries of [[{grade:5,weight:0}],[{grade:5,weight:-1}],[{grade:11,weight:1}],[{grade:NaN,weight:1}],[]])assert.throws(()=>weightedMean(entries));});
+test('gabarito acompanha a alternativa correta em ordens diferentes',()=>{const q={id:'questao',options:['a','b','c','d'].map(id=>({id,text:id})),correctId:'b'};for(let n=0;n<4;n++){const r=arrangeBooklet([q],n,true)[0];assert.equal(r.options[r.answer.charCodeAt(0)-65].id,'b');assert.equal(new Set(r.options.map(o=>o.id)).size,4);}assert.deepEqual(arrangeBooklet([q],0,false)[0].options,q.options);assert.equal(arrangeBooklet([q],0,false)[0].answer,'B');assert.deepEqual(q.options.map(o=>o.id),['a','b','c','d']);});

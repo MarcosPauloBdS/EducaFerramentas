@@ -27,7 +27,7 @@ Fonte: https://supabase.com/docs/guides/auth/auth-smtp
 ## Roteiro de aceite ainda a executar com contas reais
 
 1. Criar conta e confirmar o e-mail no mesmo navegador.
-2. Entrar, criar turma e aluno fictícios, salvar notas e uma prova.
+2. Entrar e verificar as ferramentas de turmas, alunos, notas e provas.
 3. Recarregar e abrir os registros salvos.
 4. Em outro navegador/dispositivo, entrar na mesma conta e abrir os registros; comparar os valores.
 5. Tentar salvar a versão antiga de uma prova após alterá-la no outro dispositivo: deve exibir conflito, sem sobrescrever.

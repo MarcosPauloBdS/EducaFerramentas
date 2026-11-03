@@ -1,4 +1,4 @@
-import {paragraphs,pdfDefinition} from './document-model.mjs?v=20261103-conteudo1';
+import {paragraphs,pdfDefinition} from './document-model.mjs?v=20261103-release1';
 export function exportPDF(doc,key,pdfMake){return pdfMake.createPdf(pdfDefinition(doc,key)).getBlob();}
 export function exportWord(input,key,lib){const {Document,Paragraph,TextRun,Packer,Table,TableRow,TableCell,ImageRun,Math:Equation,MathRun,MathFraction,MathSuperScript,MathRadical}=lib;const docs=Array.isArray(input)?input:[input];
 const paragraph=(p,doc)=>{const font=doc.layout.font==='serif'?'Times New Roman':'Arial';const runs=text=>text.split('\n').flatMap((text,i)=>[...(i?[new TextRun({break:1})]:[]),new TextRun({text,bold:!!p.bold||p.identity,size:(p.small?10:doc.layout.size)*2,font})]);const options={pageBreakBefore:p.breakBefore,keepNext:p.keepNext,...(p.band?{shading:{fill:p.band.slice(1),type:'clear',color:'auto'}}:{}),spacing:{after:(p.after??4)*20,line:Math.round(doc.layout.line*240)}};

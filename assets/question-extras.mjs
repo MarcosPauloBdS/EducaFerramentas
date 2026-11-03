@@ -1,5 +1,5 @@
-import {uploadImage,bindMedia} from './media-service.mjs?v=20261103-conteudo1';
-import {normalFormula,renderFormula,renderBlock,imageFit} from './rich-content.mjs?v=20261103-conteudo1';
+import {uploadImage,bindMedia} from './media-service.mjs?v=20261103-release1';
+import {normalFormula,renderFormula,renderBlock,imageFit} from './rich-content.mjs?v=20261103-release1';
 const $=id=>document.getElementById(id);
 export function setupQuestionExtras({onDraft=()=>{},upload=uploadImage,bind=bindMedia}={}){let image=null,ticket=0,busy=false;
  function preview(){const box=$('question-image-preview');box.replaceChildren();if(image){image={...image,alt:$('question-image-alt').value,displayWidth:Number($('question-image-width').value)||110};renderBlock(box,{image,fit:imageFit(image,image.displayWidth)});bind(box);}$('remove-question-image').disabled=!image;const type=$('formula-type').value;$('formula-b-field').hidden=!['fraction','power'].includes(type);$('formula-a-label').textContent=type==='fraction'?'Numerador':type==='power'?'Base':type==='root'?'Conteúdo da raiz':'Expressão';$('formula-b-label').textContent=type==='fraction'?'Denominador':'Expoente';$('formula-fields').hidden=type==='none';$('formula-preview').replaceChildren();renderFormula($('formula-preview'),{type,a:$('formula-a').value,b:$('formula-b').value});}

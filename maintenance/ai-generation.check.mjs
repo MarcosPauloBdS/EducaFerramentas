@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {validateInput,validateOutput,providerPayload,requestQuestions,createHandler} from '../supabase/functions/generate-exam/core.mjs';
-import {arrange} from '../assets/domain.mjs';
+import {arrangeBooklet} from '../assets/booklets.mjs';
 const input={topic:'Frações equivalentes',subject:'Matemática',level:'Fundamental II',difficulty:'intermediária',count:1};
 const generated={questions:[{statement:'Qual fração é equivalente a um meio?',options:['2/4','1/3','3/5','4/5'],correctIndex:0,explanation:'Multiplicar numerador e denominador por dois mantém o valor da fração.'}]};
 const post=(body=input,token='signed-user',origin='https://marcospaulobds.github.io')=>new Request('https://example.invalid/generate-exam',{method:'POST',headers:{'content-type':'application/json',...(token?{authorization:'Bearer '+token}:{}),...(origin?{origin}:{})},body:JSON.stringify(body)});
@@ -19,7 +19,7 @@ test('entrada limitada a tema curricular, nível, dificuldade e 1–3 questões'
 });
 test('validação rejeita saída incompleta, alternativas repetidas e gabaritos inválidos',()=>{
  const q=generated.questions[0];for(const body of [{questions:[]},{questions:[{...q,correctIndex:4}]},{questions:[{...q,options:['a','A','b','c']}]},{questions:[{...q,explanation:''}]}])assert.throws(()=>validateOutput(body,1));
- const normalized=validateOutput(generated,1,()=> 'fixed')[0];assert.equal(normalized.correctId,'fixed-0');for(let n=0;n<30;n++){const r=arrange(normalized,true);assert.equal(r.options[r.answer.charCodeAt(0)-65].text,'2/4');}
+ const normalized=validateOutput(generated,1,()=> 'fixed')[0];assert.equal(normalized.correctId,'fixed-0');for(let n=0;n<4;n++){const r=arrangeBooklet([normalized],n,true)[0];assert.equal(r.options[r.answer.charCodeAt(0)-65].text,'2/4');}
 });
 test('sem autenticação, sessão inválida ou usuário anônimo não há cota nem chamada de IA',async()=>{
  for(const item of [{token:null,authenticate:async()=>null},{token:'bad',authenticate:async()=>null},{token:'anonymous',authenticate:async()=>({id:'x',is_anonymous:true})}]){const s=service({authenticate:item.authenticate});const r=await s.handler(post(input,item.token));assert.equal(r.status,401);assert.deepEqual(s.calls,{reserve:0,generate:0});}

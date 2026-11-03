@@ -4,67 +4,46 @@
 
 ![EducaFerramentas — um espaço pensado para professores](assets/social/inicio.png)
 
-O EducaFerramentas é um projeto que busca deixar a rotina de professores mais leve. A proposta é reunir a preparação de provas e o acompanhamento de turmas em um espaço bonito, simples e organizado, acessível pelo navegador.
+O EducaFerramentas reúne a criação de provas, a organização de turmas e o acompanhamento de notas em um espaço acessível pelo navegador.
 
 👉 **[Acessar o EducaFerramentas](https://marcospaulobds.github.io/EducaFerramentas/)**
 
-## Um espaço para o seu trabalho
+## Como começar
 
-- **Prepare suas provas:** escreva questões e alternativas, escolha se deseja embaralhá-las e imprima ou baixe a avaliação e o gabarito separadamente em PDF ou Word.
-- **Organize suas turmas:** cadastre turmas e alunos e encontre seus registros em um só lugar.
-- **Acompanhe as notas:** registre até seis avaliações por aluno, defina os pesos e consulte a média ponderada.
-- **Continue em outro dispositivo:** entre na sua conta para abrir o trabalho que você salvou.
-- **Escolha sua atmosfera:** use os temas Aurora, Cosmos, Oceano, Amanhecer ou Alto contraste. Ajuste o texto e desative as animações se preferir.
+1. Crie sua conta e entre no seu espaço.
+2. Cadastre suas turmas e alunos para organizar os registros.
+3. Monte uma avaliação manualmente ou peça sugestões de questões à IA.
+4. Escolha o cabeçalho, acrescente imagens ou fórmulas e defina os cadernos de prova.
+5. Salve na sua conta e imprima ou baixe a prova e o gabarito em PDF ou Word.
 
-As ferramentas exigem uma conta. Salve suas alterações antes de sair; ao continuar em outro dispositivo, atualize e abra os registros desejados.
+Cada professor acessa os registros da própria conta. Salve as alterações antes de sair; ao continuar em outro dispositivo, atualize e abra os registros desejados. Revise as sugestões da IA antes de usá-las em uma avaliação.
 
-## Por que este projeto existe?
+## Ferramentas para a sua rotina
 
-Preparar avaliações, organizar turmas e acompanhar notas faz parte do trabalho de ensinar — mas também consome tempo. O EducaFerramentas nasce da vontade de simplificar essas tarefas e abrir mais espaço para o cuidado com o aprendizado.
+- **Provas personalizadas:** cabeçalhos reutilizáveis com logo, texto livre, dados automáticos ou modelo em tabela.
+- **Questões com mais recursos:** enunciados, alternativas, imagens com descrição e fórmulas simples, editáveis no Word.
+- **Cadernos organizados:** embaralhamento opcional e até quatro cadernos fixos, identificados por letras, cores ou sem identificação na folha.
+- **Gabaritos correspondentes:** resposta por extenso e letra correta para a ordem de cada caderno.
+- **Impressão e download:** prepare um caderno ou todos juntos; exporte somente as questões, se preferir.
+- **Turmas e notas:** cadastre alunos, registre até seis avaliações por aluno, defina pesos e consulte a média ponderada.
+- **Seu jeito de trabalhar:** cinco temas, cartões recolhíveis, dicas, texto ampliado, alto contraste e controle das animações.
 
-O projeto integra o Trabalho Final da **Atividade Extensionista II da UNINTER**, com o tema *Modernizar o Ensino com Inteligência Artificial*. Está em desenvolvimento e pode evoluir a partir das experiências e sugestões de professores.
+## Última atualização · 03/11/2026 · Versão 1.0
 
-## Última atualização · 03/11/2026
+- Apresentação atualizada para a versão 1.0, com orientações para o uso cotidiano de turmas e alunos.
+- Cabeçalhos com logo, dados automáticos e tabela; imagens e fórmulas nas questões.
+- Até quatro cadernos fixos com gabaritos correspondentes e download em PDF ou Word.
+- Limpeza de arquivos sem uso e organização das verificações internas de manutenção.
 
-- Cabeçalhos reutilizáveis com logo da escola, campos automáticos e modelo em tabela.
-- Imagem com descrição acessível e largura ajustável em cada questão.
-- Frações, potências, raízes e expressões simples, com equações editáveis no Word.
-- Paginação de PDF aprimorada para manter questões juntas quando couberem em uma página.
+## Próximas melhorias
 
-- Até quatro cadernos fixos, com embaralhamento que pode ser ativado ou desativado.
-- Identificação discreta por letras ou faixas Amarela, Azul, Vermelha e Verde, com opção de ocultar.
-- Impressão e download de um caderno ou de todos em um arquivo, com gabaritos correspondentes.
-- Cartões que podem ser recolhidos, dicas pelo botão de interrogação e atalhos para a prévia.
-
-- Impressão ou download em PDF e Word editável, com prova e gabarito separados.
-- Cabeçalhos reutilizáveis por escola ou disciplina, salvos na conta.
-- Opção de exportar somente questões e documentos sem marca por padrão.
-- Gabarito com a resposta por extenso, letra correspondente e versão da prova.
-- Edição básica e controles avançados de margens, fonte, espaçamento, linhas de resposta, ordem e quebras de página.
-
-- Avisos de acesso junto ao formulário, com orientações para resolver erros; mínimo de seis caracteres para criar ou redefinir a senha.
-- Sugestões de questões com IA ativadas, com revisão antes de adicionar e edição de questões na prova.
-- Nova identidade visual, com menu inferior e fundos luminosos suaves.
-- Cinco temas e preferências de leitura.
-- Login obrigatório nas ferramentas e integração de contas para salvar o trabalho.
-- Imagens de compartilhamento e ícones próprios em todas as páginas.
-- Primeiros cuidados de acessibilidade: foco visível, navegação por teclado, alto contraste e redução de movimento.
-
-## O que vem depois?
-
-- Ampliar os testes das sugestões de IA em português e da qualidade pedagógica.
-- Ampliar a edição visual de cabeçalhos e tabelas, com testes reais de envio e reutilização de imagens.
-- Desfazer e refazer alterações, com mais liberdade para organizar os blocos da avaliação.
+- Mais liberdade para editar cabeçalhos, tabelas e blocos da avaliação.
+- Desfazer e refazer alterações.
 - Boletins e formas mais completas de acompanhar o desempenho.
-- Testes com professores, leitores de tela e diferentes dispositivos.
-- Novas melhorias de acessibilidade a partir do uso real.
+- Melhorias de acessibilidade e compatibilidade a partir das experiências dos professores.
 
-## Um projeto em construção
+## Sobre o projeto
 
-Esta é uma versão acadêmica em evolução. A geração por IA já está ativada e passou por um primeiro teste real. As sugestões podem conter erros e precisam da revisão do professor. O usuário responsável já experimentou o cadastro e o acesso, inclusive no celular; a recuperação completa de senha continua em validação.
+O EducaFerramentas integra o Trabalho Final da **Atividade Extensionista II da UNINTER**, com o tema *Modernizar o Ensino com Inteligência Artificial*. Seu objetivo é simplificar tarefas da rotina docente e abrir mais espaço para o aprendizado.
 
-Durante os testes, use **dados fictícios de alunos**. A experiência em TVs, consoles e tecnologias assistivas será refinada com testes nesses equipamentos; não há garantia de compatibilidade com todos os navegadores.
-
----
-
-Desenvolvido por **Marcos Paulo B. da Silva** · EducaFerramentas · 2026
+Desenvolvido por **Marcos Paulo B. da Silva** · 2026.

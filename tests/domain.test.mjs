@@ -1,4 +1,0 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {weightedMean,arrange} from '../assets/domain.mjs';
-test('média ponderada e preservação de zero',()=>{assert.equal(weightedMean([{grade:10,weight:3},{grade:0,weight:1}]),7.5);});
-test('rejeita pesos nulos em conjunto, negativos e notas fora da escala',()=>{for(const entries of [[{grade:5,weight:0}],[{grade:5,weight:-1}],[{grade:11,weight:1}],[{grade:NaN,weight:1}],[]])assert.throws(()=>weightedMean(entries));});
-test('gabarito acompanha a alternativa correta em ordens diferentes',()=>{const q={options:['a','b','c','d'].map(id=>({id,text:id})),correctId:'b'};for(let n=0;n<100;n++){const r=arrange(q,true);assert.equal(r.options[r.answer.charCodeAt(0)-65].id,'b');assert.equal(new Set(r.options.map(o=>o.id)).size,4);}assert.deepEqual(arrange(q).options,q.options);assert.equal(arrange(q).answer,'B');assert.deepEqual(q.options.map(o=>o.id),['a','b','c','d']);});

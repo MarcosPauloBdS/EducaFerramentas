@@ -4,7 +4,7 @@ Integração preparada em 03/11/2026 exclusivamente para EducaFerramentas.
 
 ## Ação do responsável pelo projeto
 
-1. Abra https://console.groq.com/ e crie uma conta. Mantenha o plano Free; não é necessário ativar Developer nem cadastrar forma de pagamento para este protótipo. Os limites gratuitos dependem do modelo e da organização.
+1. Abra https://console.groq.com/ e crie uma conta. Mantenha o plano Free; não é necessário ativar Developer nem cadastrar forma de pagamento para utilizar a cota gratuita do projeto. Os limites gratuitos dependem do modelo e da organização.
 2. Em https://console.groq.com/keys , crie uma chave chamada EducaFerramentas. Não a envie no chat, nem a coloque no código, no template, no README ou no GitHub.
 3. Abra o painel Supabase do projeto EducaFerramentas: https://supabase.com/dashboard/project/ywhynggtlxqlrkshttch/functions/secrets . Confira o nome do projeto antes de salvar.
 4. Em Edge Functions → Secrets, adicione **GROQ_API_KEY**. No valor, cole a chave recém-criada. Salve. Não altere as variáveis automáticas SUPABASE_URL, SUPABASE_ANON_KEY ou SUPABASE_SERVICE_ROLE_KEY.
