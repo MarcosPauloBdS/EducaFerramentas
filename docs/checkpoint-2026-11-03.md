@@ -9,3 +9,4 @@ Implementados: questões manuais; alternativas com IDs estáveis; embaralhamento
 Verificação executada: três testes Node passaram, incluindo 100 embaralhamentos; verificações de sintaxe de exams.mjs e grades.mjs passaram; busca na versão ativa sem referências ao provedor removido, endpoint antigo ou inserção por innerHTML/document.write. Testes de impressão, interface no navegador e dispositivos reais ainda pendentes. Não são evidências de aplicação comunitária.
 
 Supabase: somente leitura de public no novo projeto, sem tabelas; nenhuma alteração de banco. Autenticação, RLS, persistência, tema escuro e nova IA ainda pendentes. Dados desta versão ficam em memória, com aviso visível.
+
