@@ -1,4 +1,4 @@
-import {exportPDF,exportWord} from '../assets/document-format.mjs';
+import {exportPDF,exportWord} from '../assets/document-format.mjs?v=20261103-cadernos1';
 // Pinned package files with integrity checks. Content is converted on the device.
 const files={
  pdf:['pdfmake@0.3.13/build/pdfmake.min.js','sha384-/JVvlU2iyYp0inj2VW4i5tkJYTSn1bVkfuhFeEXFTXMMgiSjR+dDD1pnRqgl5csu'],

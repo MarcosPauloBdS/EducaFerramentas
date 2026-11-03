@@ -26,6 +26,11 @@ O projeto integra o Trabalho Final da **Atividade Extensionista II da UNINTER**,
 
 ## Última atualização · 03/11/2026
 
+- Até quatro cadernos fixos, com embaralhamento que pode ser ativado ou desativado.
+- Identificação discreta por letras ou faixas Amarela, Azul, Vermelha e Verde, com opção de ocultar.
+- Impressão e download de um caderno ou de todos em um arquivo, com gabaritos correspondentes.
+- Cartões que podem ser recolhidos, dicas pelo botão de interrogação e atalhos para a prévia.
+
 - Impressão ou download em PDF e Word editável, com prova e gabarito separados.
 - Cabeçalhos reutilizáveis por escola ou disciplina, salvos na conta.
 - Opção de exportar somente questões e documentos sem marca por padrão.
