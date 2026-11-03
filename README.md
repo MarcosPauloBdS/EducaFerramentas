@@ -26,6 +26,7 @@ O projeto integra o Trabalho Final da **Atividade Extensionista II da UNINTER**,
 
 ## Última atualização · 03/11/2026
 
+- Avisos de acesso junto ao formulário, com orientações para resolver erros; mínimo de seis caracteres para criar ou redefinir a senha.
 - Nova identidade visual, com menu inferior e fundos luminosos suaves.
 - Cinco temas e preferências de leitura.
 - Login obrigatório nas ferramentas e integração de contas para salvar o trabalho.
