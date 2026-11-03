@@ -26,6 +26,11 @@ O projeto integra o Trabalho Final da **Atividade Extensionista II da UNINTER**,
 
 ## Última atualização · 03/11/2026
 
+- Cabeçalhos reutilizáveis com logo da escola, campos automáticos e modelo em tabela.
+- Imagem com descrição acessível e largura ajustável em cada questão.
+- Frações, potências, raízes e expressões simples, com equações editáveis no Word.
+- Paginação de PDF aprimorada para manter questões juntas quando couberem em uma página.
+
 - Até quatro cadernos fixos, com embaralhamento que pode ser ativado ou desativado.
 - Identificação discreta por letras ou faixas Amarela, Azul, Vermelha e Verde, com opção de ocultar.
 - Impressão e download de um caderno ou de todos em um arquivo, com gabaritos correspondentes.
@@ -48,8 +53,8 @@ O projeto integra o Trabalho Final da **Atividade Extensionista II da UNINTER**,
 ## O que vem depois?
 
 - Ampliar os testes das sugestões de IA em português e da qualidade pedagógica.
-- Cabeçalhos com imagens e tabelas, campos automáticos e edição visual mais livre.
-- Geração de vários cadernos de prova com seus respectivos gabaritos.
+- Ampliar a edição visual de cabeçalhos e tabelas, com testes reais de envio e reutilização de imagens.
+- Desfazer e refazer alterações, com mais liberdade para organizar os blocos da avaliação.
 - Boletins e formas mais completas de acompanhar o desempenho.
 - Testes com professores, leitores de tela e diferentes dispositivos.
 - Novas melhorias de acessibilidade a partir do uso real.
