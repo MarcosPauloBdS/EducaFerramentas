@@ -15,7 +15,7 @@ Não é necessário domínio de e-mail ou assinatura paga do modelo. A chave é 
 
 ## Modelo e limites iniciais
 
-Groq, modelo openai/gpt-oss-20b, com JSON Schema estrito. A implementação valida quantidade, limites de tamanho, alternativas distintas e posição da resposta correta mesmo após uma resposta formalmente válida do modelo. Esse controle estrutural não comprova que o conteúdo pedagógico está correto: o professor precisa revisar.
+Groq, modelo openai/gpt-oss-120b, com JSON Schema estrito. A implementação valida quantidade, limites de tamanho, alternativas distintas e posição da resposta correta mesmo após uma resposta formalmente válida do modelo. Há uma checagem determinística adicional para questões simples de frações equivalentes com alternativas numéricas. Esse controle não comprova a correção de todo conteúdo pedagógico: o professor precisa revisar.
 
 De uma a três questões por solicitação; 10 solicitações por conta/dia; 30 por projeto/dia; intervalo global mínimo de 60 segundos. Dia de cota baseado em UTC. Tentativas reservadas para enviar ao provedor contam mesmo se houver falha; falhas antes da reserva, como entrada inválida ou serviço não ativado, não consomem cota. Não há tentativas automáticas adicionais.
 
@@ -37,7 +37,7 @@ O cliente administrativo existe somente no servidor, para reservar cota em uma f
 
 ## Situação da verificação
 
-Fluxos com provedor simulado e teste SQL transacional validam comportamento técnico; não equivalem a geração real. Enquanto não houver chave e chamada bem-sucedida, registrar a integração como preparada, sem afirmar que a IA gerou questões de verdade.
+Ativação testada em 03/11/2026 pela interface real. A primeira resposta do modelo 20b teve múltiplas alternativas corretas e foi reprovada na revisão. A geração foi ajustada para o modelo 120b, com instruções reforçadas e checagem adicional de frações. Uma nova questão foi revisada, adicionada, editada e salva na conta. Isso valida esse exemplo e o fluxo observado, não a qualidade de todas as gerações. Ver docs/validacao-ia-2026-11-03.md.
 
 O verificador de segurança do Supabase apontou proteção contra senhas vazadas desativada. Nenhuma configuração de senha foi alterada nesta etapa. Referência: https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection . A disponibilidade desse recurso depende do plano.
 

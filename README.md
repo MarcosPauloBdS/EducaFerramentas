@@ -27,7 +27,7 @@ O projeto integra o Trabalho Final da **Atividade Extensionista II da UNINTER**,
 ## Última atualização · 03/11/2026
 
 - Avisos de acesso junto ao formulário, com orientações para resolver erros; mínimo de seis caracteres para criar ou redefinir a senha.
-- Fluxo de sugestões de questões com IA preparado para ativação, com revisão antes de adicionar e edição de questões na prova.
+- Sugestões de questões com IA ativadas, com revisão antes de adicionar e edição de questões na prova.
 - Nova identidade visual, com menu inferior e fundos luminosos suaves.
 - Cinco temas e preferências de leitura.
 - Login obrigatório nas ferramentas e integração de contas para salvar o trabalho.
@@ -36,7 +36,7 @@ O projeto integra o Trabalho Final da **Atividade Extensionista II da UNINTER**,
 
 ## O que vem depois?
 
-- Ativação e validação das sugestões de IA em português, sem exigir chaves dos professores.
+- Ampliar os testes das sugestões de IA em português e da qualidade pedagógica.
 - Mais opções de edição de questões e organização de avaliações.
 - Boletins e formas mais completas de acompanhar o desempenho.
 - Testes com professores, leitores de tela e diferentes dispositivos.
@@ -44,7 +44,7 @@ O projeto integra o Trabalho Final da **Atividade Extensionista II da UNINTER**,
 
 ## Um projeto em construção
 
-Esta é uma versão acadêmica em evolução. A geração por IA está preparada e aguarda ativação do serviço pelo responsável pelo projeto. O usuário responsável já experimentou o cadastro e o acesso, inclusive no celular; a recuperação completa de senha continua em validação.
+Esta é uma versão acadêmica em evolução. A geração por IA já está ativada e passou por um primeiro teste real. As sugestões podem conter erros e precisam da revisão do professor. O usuário responsável já experimentou o cadastro e o acesso, inclusive no celular; a recuperação completa de senha continua em validação.
 
 Durante os testes, use **dados fictícios de alunos**. A experiência em TVs, consoles e tecnologias assistivas será refinada com testes nesses equipamentos; não há garantia de compatibilidade com todos os navegadores.
 

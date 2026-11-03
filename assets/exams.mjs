@@ -1,8 +1,8 @@
-import {setupAI} from './ai-exams.mjs';
+import {setupAI} from './ai-exams.mjs?v=20261103-ai2';
 import {arrange} from './domain.mjs';
 import {supabase} from './client.mjs';
 import {requireUser} from './session.mjs';
-import {$,node,message,action,check,conflict} from './ui.mjs';
+import {$,node,message,action,check,conflict} from './ui.mjs?v=20261103-state2';
 let questions=[],record=null,dirty=false,editingId=null;
 const user=await requireUser();
 const changed=()=>{dirty=true;message('Alterações no rascunho. Clique em Salvar prova na conta.');};

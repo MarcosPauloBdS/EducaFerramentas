@@ -9,6 +9,7 @@ export function aiErrorMessage(code,retryAfter=0){
   if(code==='PROVIDER_LIMIT')return 'O serviço de IA atingiu seu limite temporário. Aguarde alguns minutos e tente novamente, sem repetir várias solicitações.';
   if(code==='INVALID_INPUT'||code==='BODY_TOO_LARGE')return 'Confira o tema, a disciplina e a quantidade de 1 a 3 questões. Use apenas conteúdo curricular e tente novamente.';
   if(code==='INVALID_OUTPUT')return 'A resposta da IA não passou pela validação. Nenhuma questão foi adicionada. Tente novamente com um tema mais específico ou crie a questão manualmente.';
+  if(code==='CONTENT_CHECK_FAILED')return 'Uma verificação matemática identificou inconsistência nas alternativas ou no gabarito. Nenhuma questão foi adicionada. Tente gerar novamente ou crie a questão manualmente.';
   if(code==='PROVIDER_TIMEOUT')return 'A IA demorou além do esperado. Nenhuma questão foi adicionada. Aguarde um pouco e tente novamente ou use a criação manual.';
   if(code==='AI_CONFIGURATION')return 'A IA está temporariamente indisponível. A equipe do projeto precisa revisar a ativação; por enquanto, use a criação manual.';
   return 'Não foi possível acessar a IA agora. Confira sua conexão e tente mais tarde. A criação manual continua disponível.';

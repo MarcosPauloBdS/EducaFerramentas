@@ -1,7 +1,7 @@
 import {weightedMean} from './domain.mjs';
 import {supabase} from './client.mjs';
 import {requireUser} from './session.mjs';
-import {$,node,message,action,check,conflict} from './ui.mjs';
+import {$,node,message,action,check,conflict} from './ui.mjs?v=20261103-state2';
 const user=await requireUser();let students=[],reports=[],generation=0,gradeDirty=false;
 const discard=()=>!gradeDirty||confirm('Descartar as notas ainda não salvas?');
 $('grades-form').addEventListener('input',e=>{if(e.target.matches('input[type=number]'))gradeDirty=true;});

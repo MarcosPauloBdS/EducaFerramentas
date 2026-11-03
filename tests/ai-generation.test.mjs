@@ -5,6 +5,13 @@ import {arrange} from '../assets/domain.mjs';
 const input={topic:'Frações equivalentes',subject:'Matemática',level:'Fundamental II',difficulty:'intermediária',count:1};
 const generated={questions:[{statement:'Qual fração é equivalente a um meio?',options:['2/4','1/3','3/5','4/5'],correctIndex:0,explanation:'Multiplicar numerador e denominador por dois mantém o valor da fração.'}]};
 const post=(body=input,token='signed-user',origin='https://marcospaulobds.github.io')=>new Request('https://example.invalid/generate-exam',{method:'POST',headers:{'content-type':'application/json',...(token?{authorization:'Bearer '+token}:{}),...(origin?{origin}:{})},body:JSON.stringify(body)});
+test('regressão real: rejeita várias frações equivalentes e gabarito inconsistente',()=>{
+ const q={statement:'Qual das opções representa uma fração equivalente a 3/4?',options:['1/2','6/8','9/12','12/16'],correctIndex:1,explanation:'Multiplicando numerador e denominador por dois, temos seis oitavos.'};
+ assert.throws(()=>validateOutput({questions:[q]},1),e=>e.code==='CONTENT_CHECK_FAILED');
+ assert.throws(()=>validateOutput({questions:[{...q,statement:'Qual das frações abaixo é equivalente a 3/4?'}]},1),e=>e.code==='CONTENT_CHECK_FAILED');
+ const correct={...q,options:['1/2','6/8','9/16','12/20']};assert.equal(validateOutput({questions:[correct]},1,()=> 'math')[0].correctId,'math-1');
+ assert.throws(()=>validateOutput({questions:[{...correct,correctIndex:0}]},1),e=>e.code==='CONTENT_CHECK_FAILED');
+});
 function service(overrides={}){const calls={reserve:0,generate:0};return{calls,handler:createHandler({authenticate:async()=>({id:'verified-user'}),isConfigured:()=>true,reserve:async id=>{assert.equal(id,'verified-user');calls.reserve++;return{allowed:true,remaining:9};},generate:async()=>{calls.generate++;return validateOutput(generated,1,()=> 'question');},...overrides})};}
 test('entrada limitada a tema curricular, nível, dificuldade e 1–3 questões',()=>{
  assert.equal(validateInput(input).count,1);
