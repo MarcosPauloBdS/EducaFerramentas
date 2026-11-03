@@ -1,0 +1,3 @@
+[functions.generate-exam]
+# A função valida o JWT do usuário com getUser antes de qualquer chamada de IA.
+verify_jwt = false
