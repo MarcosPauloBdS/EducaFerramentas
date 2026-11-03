@@ -10,7 +10,7 @@ O EducaFerramentas é um projeto que busca deixar a rotina de professores mais l
 
 ## Um espaço para o seu trabalho
 
-- **Prepare suas provas:** escreva questões e alternativas, escolha se deseja embaralhá-las e imprima a avaliação e o gabarito separadamente.
+- **Prepare suas provas:** escreva questões e alternativas, escolha se deseja embaralhá-las e imprima ou baixe a avaliação e o gabarito separadamente em PDF ou Word.
 - **Organize suas turmas:** cadastre turmas e alunos e encontre seus registros em um só lugar.
 - **Acompanhe as notas:** registre até seis avaliações por aluno, defina os pesos e consulte a média ponderada.
 - **Continue em outro dispositivo:** entre na sua conta para abrir o trabalho que você salvou.
@@ -26,6 +26,12 @@ O projeto integra o Trabalho Final da **Atividade Extensionista II da UNINTER**,
 
 ## Última atualização · 03/11/2026
 
+- Impressão ou download em PDF e Word editável, com prova e gabarito separados.
+- Cabeçalhos reutilizáveis por escola ou disciplina, salvos na conta.
+- Opção de exportar somente questões e documentos sem marca por padrão.
+- Gabarito com a resposta por extenso, letra correspondente e versão da prova.
+- Edição básica e controles avançados de margens, fonte, espaçamento, linhas de resposta, ordem e quebras de página.
+
 - Avisos de acesso junto ao formulário, com orientações para resolver erros; mínimo de seis caracteres para criar ou redefinir a senha.
 - Sugestões de questões com IA ativadas, com revisão antes de adicionar e edição de questões na prova.
 - Nova identidade visual, com menu inferior e fundos luminosos suaves.
@@ -37,7 +43,8 @@ O projeto integra o Trabalho Final da **Atividade Extensionista II da UNINTER**,
 ## O que vem depois?
 
 - Ampliar os testes das sugestões de IA em português e da qualidade pedagógica.
-- Mais opções de edição de questões e organização de avaliações.
+- Cabeçalhos com imagens e tabelas, campos automáticos e edição visual mais livre.
+- Geração de vários cadernos de prova com seus respectivos gabaritos.
 - Boletins e formas mais completas de acompanhar o desempenho.
 - Testes com professores, leitores de tela e diferentes dispositivos.
 - Novas melhorias de acessibilidade a partir do uso real.
